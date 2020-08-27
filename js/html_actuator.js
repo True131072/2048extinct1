@@ -57,12 +57,74 @@ HTMLActuator.prototype.addTile = function (tile) {
   // We can't use classlist because it somehow glitches when replacing classes
   var classes = ["tile", "tile-" + tile.value, positionClass];
 
-  if (tile.value > 48828125) classes.push("tile-super");
-
   this.applyClasses(wrapper, classes);
-
+  var outputtext = new Array();
+  outputtext[1] = "1";
+  outputtext[2] = "2";
+  outputtext[4] = "4";
+  outputtext[8] = "8";
+  outputtext[16] = "16";
+  outputtext[32] = "32";
+  outputtext[64] = "64";
+  outputtext[128] = "128";
+  outputtext[256] = "256";
+  outputtext[512] = "512";
+  outputtext[1024] = "1024";
+  outputtext[2048] = "2048";
+  outputtext[4096] = "4096";
+  outputtext[8192] = "8192";
+  outputtext[16384] = "16384";
+  outputtext[32768] = "32768";
+  outputtext[65536] = "65536";
+  outputtext[131072] = "131072";
+  outputtext[262144] = "262144";
+  outputtext[524288] = "524288";
+  outputtext[1048576] = "1048576";
+  outputtext[2097152] = "2097152";
+  outputtext[4194304] = "4194304";
+  outputtext[8388608] = "8388608";
+  outputtext[16777216] = "16777216";
+  outputtext[33554432] = "33554432";
+  outputtext[67108864] = "67108864";
+  outputtext[134217728] = "134217728";
+  outputtext[268435456] = "268435456";
+  outputtext[536870912] = "536870912";
+  outputtext[1073741824] = "1G";
+  outputtext[2147483648] = "2G";
+  outputtext[4294967296] = "4G";
+  outputtext[8589934592] = "8G";
+  outputtext[17179869184] = "16G";
+  outputtext[34359738368] = "32G";
+  outputtext[68719476736] = "64G";
+  outputtext[137438953472] = "128G";
+  outputtext[274877906944] = "256G";
+  outputtext[549755813888] = "512G";
+  outputtext[1099511627776] = "1024G";
+  outputtext[2199023255552] = "2048G";
+  outputtext[4398046511104] = "4096G";
+  outputtext[8796093022208] = "8192G";
+  outputtext[17592186044416] = "16384G";
+  outputtext[35184372088832] = "32768G";
+  outputtext[70368744177664] = "65536G";
+  outputtext[140737488355328] = "131072G";
+  outputtext[281474976710656] = "262144G";
+  outputtext[562949953421312] = "524288G";
+  outputtext[1125899906842624] = "1048576G";
+  outputtext[2251799813685248] = "2097152G";
+  outputtext[4503599627370496] = "4194304G";
+  outputtext[9007199254740992] = "8388608G";
+  outputtext[18014398509481984] = "16777216G";
+  outputtext[36028797018963970] = "33554432G";
+  outputtext[72057594037927940] = "67108864G";
+  outputtext[144115188075855870] = "134217728G";
+  outputtext[288230376151711740] = "268435456G";
+  outputtext[576460752303423500] = "536870912G";
+  outputtext[1152921504606847000] = "1073741824G";
+  outputtext[2305843009213694000] = "2147483647G";
+  outputtext[4611686018427388000] = "∞";
+  
   inner.classList.add("tile-inner");
-  inner.textContent = tile.value;
+  inner.textContent = outputtext[tile.value];
 
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first
